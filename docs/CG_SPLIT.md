@@ -199,6 +199,28 @@ train** (`scripts/hgo/cg_dose.py`, `scripts/hgo/cg_dose_eval.sbatch`, metric cac
   - wh_only chỉ là kiểm tra phụ: các cửa sổ không đối tác vốn dễ (điểm gần trần), d ≈ 0 ở đó không bác bỏ B.
   - Trường hợp lưng chừng (d > 0 nhưng hiệu của hiệu chứa 0): báo nguyên số, không kết luận.
 
+**Kết quả (15/11; job 65515 prep, 65516 / 65517 chấm, 65519 thống kê; `exp/cg_eval/dose_drivor_turn_vru_s0.json`).**
+Đủ 3.907 / 3.907 cửa sổ cho cả hai run. d = exposed − withheld, CI 95 % bootstrap theo log (theo session cùng kết luận).
+
+| nhóm (ai được train) | n / log | EPDMS ex / wh | d EPDMS | d NC |
+|---|---|---|---|---|
+| ex_only_cell (chỉ exposed) | 746 / 126 | 82,81 / 82,96 | −0,15 [−1,66; 1,41] | 0,00 [−1,42; 1,54] |
+| ex_only_purged (chỉ exposed) | 500 / 148 | 88,49 / 88,79 | −0,30 [−1,41; 0,91] | +0,10 [−0,73; 0,87] |
+| wh_only (chỉ withheld) | 746 / 399 | 92,15 / 92,01 | +0,14 [−0,63; 0,96] | −0,27 [−0,71; 0,00] |
+| both_same_man | 500 / 87 | 87,03 / 87,62 | −0,59 [−2,47; 1,13] | −0,40 [−2,19; 1,24] |
+| both_same_partner | 415 / 79 | 88,53 / 88,51 | +0,01 [−0,83; 0,91] | +0,24 [−0,53; 1,09] |
+| both_man_none | 500 / 291 | 90,36 / 90,87 | −0,51 [−1,60; 0,58] | −0,10 [−0,68; 0,49] |
+| both_other | 500 / 313 | 92,41 / 92,98 | −0,57 [−1,28; 0,01] | −0,20 [−0,50; 0,00] |
+
+Hiệu của hiệu d(ex_only_cell) − d(both_*), EPDMS: +0,44 / −0,16 / +0,36 / +0,42, mọi CI chứa 0 (NC tương tự). Hai model
+cho điểm khác nhau trên 464 / 746 cửa sổ ô (NC khác ở 23), nhưng không lệch theo việc ai được train.
+
+Đọc theo quy tắc đã chốt: **A (không nhạy)**. Exposed không tốt hơn withheld ngay trên 746 cửa sổ ô nó đã được train (điểm
+còn thấp hơn cảnh test của ô); withheld cũng không tốt hơn trên cửa sổ riêng của nó. Ở liều này (0,9 % dữ liệu, 6 epoch),
+recipe này và với DrivoR, việc có trong tập train không để lại dấu vết đo được bằng EPDMS / NC → "gap ≈ 0" ở §10.1
+**không** dùng được làm bằng chứng không có gap CG. Chưa tách được nguyên nhân: liều quá nhỏ, quỹ đạo do scorer (học nhãn
+PDM trên mọi cửa sổ) quyết định nên vài trăm ví dụ expert gần như không đổi lựa chọn, hay EPDMS 4 s kém nhạy.
+
 ## 11. Trạng thái
 
 - [x] Nhãn tình huống, định nghĩa cắt qua + giao lộ, chia session, pool, fold, manifest, ảnh kiểm tra.

@@ -3,7 +3,7 @@
 Research code for the staged plan in the proposal (Phase 0 → 5). Status: Phase 0 (audit, DrivoR reproduction) and Phase 1 (diagnostic, frozen
 DrivoR features, GT objects) are closed. Current method: HGO v3
 ([docs/METHOD.md](docs/METHOD.md), rationale [docs/METHOD_RATIONALE.md](docs/METHOD_RATIONALE.md)); experiments
-[docs/RESEARCH_DESIGN.md](docs/RESEARCH_DESIGN.md); compositional split [docs/CG_SPLIT.md](docs/CG_SPLIT.md). Superseded docs
+[docs/RESEARCH_DESIGN.md](docs/RESEARCH_DESIGN.md); compositional split [docs/CG_SPLIT.md](docs/CG_SPLIT.md); current status [docs/STATUS.md](docs/STATUS.md). Superseded docs
 (pilot H32, v2 design) are archived in `exp/archive/docs_2026-11-12/`.
 
 ## Layout
