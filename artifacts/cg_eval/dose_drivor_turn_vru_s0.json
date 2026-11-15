@@ -1,0 +1,572 @@
+{
+ "exposed": [
+  "exp/cg_eval/drivor_turn_vru_exposed_812x476_e6_s0/dose.csv"
+ ],
+ "withheld": [
+  "exp/cg_eval/drivor_turn_vru_withheld_812x476_e6_s0/dose.csv"
+ ],
+ "windows": 3907,
+ "missing": {
+  "exposed": {
+   "ex_only_cell": 0,
+   "ex_only_purged": 0,
+   "wh_only": 0,
+   "both_same_man": 0,
+   "both_same_partner": 0,
+   "both_man_none": 0,
+   "both_other": 0
+  },
+  "withheld": {
+   "ex_only_cell": 0,
+   "ex_only_purged": 0,
+   "wh_only": 0,
+   "both_same_man": 0,
+   "both_same_partner": 0,
+   "both_man_none": 0,
+   "both_other": 0
+  }
+ },
+ "ex_only_cell": {
+  "windows": 746,
+  "logs": 126,
+  "sessions": 67,
+  "exposed_EPDMS": 82.81,
+  "withheld_EPDMS": 82.96,
+  "d_EPDMS": -0.15,
+  "n_differ_EPDMS": 464,
+  "d_EPDMS_ci_log": [
+   -1.66,
+   1.41
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -1.58,
+   1.31
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 95.04,
+  "withheld_NC": 95.04,
+  "d_NC": 0.0,
+  "n_differ_NC": 23,
+  "d_NC_ci_log": [
+   -1.42,
+   1.54
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -1.35,
+   1.18
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "ex_only_purged": {
+  "windows": 500,
+  "logs": 148,
+  "sessions": 78,
+  "exposed_EPDMS": 88.49,
+  "withheld_EPDMS": 88.79,
+  "d_EPDMS": -0.3,
+  "n_differ_EPDMS": 295,
+  "d_EPDMS_ci_log": [
+   -1.41,
+   0.91
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -1.39,
+   0.88
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 98.0,
+  "withheld_NC": 97.9,
+  "d_NC": 0.1,
+  "n_differ_NC": 7,
+  "d_NC_ci_log": [
+   -0.73,
+   0.87
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -0.69,
+   0.94
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "wh_only": {
+  "windows": 746,
+  "logs": 399,
+  "sessions": 113,
+  "exposed_EPDMS": 92.15,
+  "withheld_EPDMS": 92.01,
+  "d_EPDMS": 0.14,
+  "n_differ_EPDMS": 494,
+  "d_EPDMS_ci_log": [
+   -0.63,
+   0.96
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -0.66,
+   0.96
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 99.66,
+  "withheld_NC": 99.93,
+  "d_NC": -0.27,
+  "n_differ_NC": 2,
+  "d_NC_ci_log": [
+   -0.71,
+   0.0
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -0.71,
+   0.0
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "both_same_man": {
+  "windows": 500,
+  "logs": 87,
+  "sessions": 61,
+  "exposed_EPDMS": 87.03,
+  "withheld_EPDMS": 87.62,
+  "d_EPDMS": -0.59,
+  "n_differ_EPDMS": 310,
+  "d_EPDMS_ci_log": [
+   -2.47,
+   1.13
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -2.56,
+   1.3
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 96.2,
+  "withheld_NC": 96.6,
+  "d_NC": -0.4,
+  "n_differ_NC": 16,
+  "d_NC_ci_log": [
+   -2.19,
+   1.24
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -2.13,
+   1.27
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "both_same_partner": {
+  "windows": 415,
+  "logs": 79,
+  "sessions": 52,
+  "exposed_EPDMS": 88.53,
+  "withheld_EPDMS": 88.51,
+  "d_EPDMS": 0.01,
+  "n_differ_EPDMS": 309,
+  "d_EPDMS_ci_log": [
+   -0.83,
+   0.91
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -0.82,
+   0.92
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 96.87,
+  "withheld_NC": 96.63,
+  "d_NC": 0.24,
+  "n_differ_NC": 3,
+  "d_NC_ci_log": [
+   -0.53,
+   1.09
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -0.51,
+   1.14
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "both_man_none": {
+  "windows": 500,
+  "logs": 291,
+  "sessions": 103,
+  "exposed_EPDMS": 90.36,
+  "withheld_EPDMS": 90.87,
+  "d_EPDMS": -0.51,
+  "n_differ_EPDMS": 339,
+  "d_EPDMS_ci_log": [
+   -1.6,
+   0.58
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -1.72,
+   0.71
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 99.5,
+  "withheld_NC": 99.6,
+  "d_NC": -0.1,
+  "n_differ_NC": 3,
+  "d_NC_ci_log": [
+   -0.68,
+   0.49
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -0.68,
+   0.48
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "both_other": {
+  "windows": 500,
+  "logs": 313,
+  "sessions": 107,
+  "exposed_EPDMS": 92.41,
+  "withheld_EPDMS": 92.98,
+  "d_EPDMS": -0.57,
+  "n_differ_EPDMS": 343,
+  "d_EPDMS_ci_log": [
+   -1.28,
+   0.01
+  ],
+  "d_EPDMS_valid_draws_log": 2000,
+  "d_EPDMS_ci_session": [
+   -1.25,
+   -0.03
+  ],
+  "d_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 99.4,
+  "withheld_NC": 99.6,
+  "d_NC": -0.2,
+  "n_differ_NC": 2,
+  "d_NC_ci_log": [
+   -0.5,
+   0.0
+  ],
+  "d_NC_valid_draws_log": 2000,
+  "d_NC_ci_session": [
+   -0.49,
+   0.0
+  ],
+  "d_NC_valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_cell_minus_both_same_man": {
+  "value": 0.44,
+  "ci_log": [
+   -1.97,
+   2.87
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.88,
+   2.67
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_cell_minus_both_same_man": {
+  "value": 0.4,
+  "ci_log": [
+   -1.82,
+   2.67
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.78,
+   2.4
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_cell_minus_both_same_partner": {
+  "value": -0.16,
+  "ci_log": [
+   -1.89,
+   1.57
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.86,
+   1.54
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_cell_minus_both_same_partner": {
+  "value": -0.24,
+  "ci_log": [
+   -1.7,
+   1.46
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.7,
+   1.11
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_cell_minus_both_man_none": {
+  "value": 0.36,
+  "ci_log": [
+   -1.5,
+   2.33
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.45,
+   2.06
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_cell_minus_both_man_none": {
+  "value": 0.1,
+  "ci_log": [
+   -1.5,
+   1.73
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.36,
+   1.42
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_cell_minus_both_other": {
+  "value": 0.42,
+  "ci_log": [
+   -1.19,
+   2.16
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.16,
+   1.99
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_cell_minus_both_other": {
+  "value": 0.2,
+  "ci_log": [
+   -1.32,
+   1.88
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.2,
+   1.46
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_purged_minus_both_same_man": {
+  "value": 0.29,
+  "ci_log": [
+   -1.82,
+   2.52
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.91,
+   2.56
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_purged_minus_both_same_man": {
+  "value": 0.5,
+  "ci_log": [
+   -1.43,
+   2.4
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.36,
+   2.4
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_purged_minus_both_same_partner": {
+  "value": -0.31,
+  "ci_log": [
+   -1.91,
+   1.3
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.84,
+   1.12
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_purged_minus_both_same_partner": {
+  "value": -0.14,
+  "ci_log": [
+   -1.5,
+   1.1
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.52,
+   1.1
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_purged_minus_both_man_none": {
+  "value": 0.21,
+  "ci_log": [
+   -1.5,
+   1.79
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.4,
+   1.93
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_purged_minus_both_man_none": {
+  "value": 0.2,
+  "ci_log": [
+   -0.82,
+   1.15
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.75,
+   1.23
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_ex_only_purged_minus_both_other": {
+  "value": 0.27,
+  "ci_log": [
+   -1.03,
+   1.62
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.88,
+   1.57
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_ex_only_purged_minus_both_other": {
+  "value": 0.3,
+  "ci_log": [
+   -0.46,
+   1.07
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.45,
+   1.11
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_wh_only_minus_both_same_man": {
+  "value": 0.73,
+  "ci_log": [
+   -1.3,
+   2.76
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.39,
+   2.83
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_wh_only_minus_both_same_man": {
+  "value": 0.13,
+  "ci_log": [
+   -1.58,
+   1.94
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.56,
+   1.85
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_wh_only_minus_both_same_partner": {
+  "value": 0.13,
+  "ci_log": [
+   -1.1,
+   1.42
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.14,
+   1.38
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_wh_only_minus_both_same_partner": {
+  "value": -0.51,
+  "ci_log": [
+   -1.46,
+   0.34
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.48,
+   0.3
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_wh_only_minus_both_man_none": {
+  "value": 0.65,
+  "ci_log": [
+   -0.63,
+   1.97
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.01,
+   2.32
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_wh_only_minus_both_man_none": {
+  "value": -0.17,
+  "ci_log": [
+   -0.91,
+   0.51
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.87,
+   0.53
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_wh_only_minus_both_other": {
+  "value": 0.71,
+  "ci_log": [
+   -0.28,
+   1.78
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.32,
+   1.85
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_wh_only_minus_both_other": {
+  "value": -0.07,
+  "ci_log": [
+   -0.58,
+   0.37
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.59,
+   0.36
+  ],
+  "valid_draws_session": 2000
+ }
+}

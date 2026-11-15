@@ -1,0 +1,39 @@
+{
+ "available": {
+  "ex_only": 2543,
+  "wh_only": 2543,
+  "both": 78535,
+  "ex_only_cell": 746
+ },
+ "selected": {
+  "ex_only_cell": {
+   "windows": 746,
+   "logs": 126
+  },
+  "ex_only_purged": {
+   "windows": 500,
+   "logs": 148
+  },
+  "wh_only": {
+   "windows": 746,
+   "logs": 399
+  },
+  "both_same_man": {
+   "windows": 500,
+   "logs": 87
+  },
+  "both_same_partner": {
+   "windows": 415,
+   "logs": 79
+  },
+  "both_man_none": {
+   "windows": 500,
+   "logs": 291
+  },
+  "both_other": {
+   "windows": 500,
+   "logs": 313
+  }
+ },
+ "total": 3907
+}

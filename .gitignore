@@ -22,6 +22,7 @@ lightning_logs/
 *.npz
 *.pkl
 *.parquet
+!/artifacts/cg_lists/*.parquet
 
 # python / tooling
 __pycache__/

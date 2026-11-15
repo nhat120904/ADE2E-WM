@@ -1,52 +1,61 @@
 # ade2e-wm: Hybrid Global–Object JEPA for compositional generalization in driving
 
-Research code for the staged plan in the proposal (Phase 0 → 5). Status: Phase 0 (audit, DrivoR reproduction) and Phase 1 (diagnostic, frozen
-DrivoR features, GT objects) are closed. Current method: HGO v3
-([docs/METHOD.md](docs/METHOD.md), rationale [docs/METHOD_RATIONALE.md](docs/METHOD_RATIONALE.md)); experiments
-[docs/RESEARCH_DESIGN.md](docs/RESEARCH_DESIGN.md); compositional split [docs/CG_SPLIT.md](docs/CG_SPLIT.md); current status [docs/STATUS.md](docs/STATUS.md). Superseded docs
-(pilot H32, v2 design) are archived in `exp/archive/docs_2026-11-12/`.
+Research code. Problem: compositional generalization (CG) of camera-based end-to-end planners — driving well in a
+combination of situations never seen together in training, although each part was seen. Method: HGO v3
+([docs/METHOD.md](docs/METHOD.md), rationale [docs/METHOD_RATIONALE.md](docs/METHOD_RATIONALE.md)); experiment design
+[docs/RESEARCH_DESIGN.md](docs/RESEARCH_DESIGN.md); CG split, protocol and all CG results on NAVSIM
+[docs/CG_SPLIT.md](docs/CG_SPLIT.md). **Current status and next steps: [docs/STATUS.md](docs/STATUS.md).**
+
+Status (15/11/2026): CG split v1 on NAVSIM built; DrivoR withheld / exposed pilot showed no exposure gap, and an
+exposure-dose check showed the measurement is not sensitive, so the pilot does not answer the question. Next: validate
+the evaluation protocol with cheap checks (reference planners, kNN positive control) before more training; CARLA
+closed-loop for the main CG evidence.
 
 ## Layout
 
 | Path | Contents |
 |---|---|
-| `third_party/` | unmodified upstream clones, not in git: DrivoR (valeoai/DrivoR `fc6e5aa`), NAVSIM (autonomousvision/navsim `359c7f7`), py123d_garage (kesai-labs `ad6cb51`), WA-JEPA (AFARI-Research `bec2966`) |
-| `src/ade2e_wm/` | our code; `agents/drivor` is DrivoR's agent vendored by `scripts/phase0/vendor_drivor.py` |
-| `configs/navsim/agent/` | Hydra agent configs for the official NAVSIM v2.2 devkit (added via `hydra.searchpath`) |
-| `scripts/phase0/` | Slurm jobs and audit scripts for Phase 0; `env.sh` sets all paths |
-| `src/ade2e_wm/hgo/`, `scripts/hgo/`, `tests/hgo/` | the method (docs/METHOD.md): data, model, losses, PDM labels, training, evaluation |
-| `scripts/common/` | Slurm queue driver (≤ 2 jobs), generic command / test jobs |
-| `checkpoints/` | released DrivoR checkpoints and DINOv2 ViT-S/14-reg4 weights (`SHA256SUMS`) |
-| `data/` | NAVSIM/OpenScene data in the official layout (`OPENSCENE_DATA_ROOT`), nuPlan maps, kesai nuPlan-123D sample |
-| `envs/navsim2/` | uv virtualenv (Python 3.9); freeze in `envs/navsim2_freeze.txt` |
-| `exp/` | `NAVSIM_EXP_ROOT`: metric caches and evaluation outputs |
-| `logs/slurm/` | job logs |
+| `src/ade2e_wm/hgo/`, `scripts/hgo/`, `tests/hgo/` | HGO v3 (data, model, losses, PDM labels, training) and the CG tooling (labels, split, DrivoR pilot, gap statistics) |
+| `src/ade2e_wm/agents/drivor/` | DrivoR's agent vendored by `scripts/phase0/vendor_drivor.py` |
+| `configs/navsim/`, `configs/navsim_cg/` | Hydra configs for the official NAVSIM v2.2 devkit (via `hydra.searchpath`); CG scene filters |
+| `artifacts/cg_lists/` | CG split v1 (`split_v1/`: sessions, pool, folds, manifests, test groups) and the per-frame situation labels (`events_*.parquet`) |
+| `artifacts/cg_eval/` | per-scene scores (CSV) and gap / dose results (JSON) of step 0, the DrivoR pilot and the dose check |
+| `scripts/phase0/` | data download, environment, DrivoR reproduction jobs; `env.sh` sets all paths |
+| `scripts/common/` | generic Slurm CPU / test jobs |
+| `docs/figures/cg_samples/` | sample images of the CG groups (3 cameras + top view from GT) |
+| not in git | `data/` (NAVSIM / OpenScene, nuPlan maps), `exp/` (`NAVSIM_EXP_ROOT`: metric caches, runs), `envs/` (freeze in `envs/navsim2_freeze.txt`), `checkpoints/` (`SHA256SUMS`), `logs/`, `third_party/` |
+| `third_party/` (clone) | DrivoR (valeoai/DrivoR `fc6e5aa`), NAVSIM (autonomousvision/navsim `359c7f7`), py123d_garage (kesai-labs `ad6cb51`), WA-JEPA (AFARI-Research `bec2966`); unmodified |
 
-## Reproducing Phase 0
-
-All compute runs through Slurm on compute nodes (QOS: ≤16 CPUs per job, ≤32 CPUs / 2 GPUs per user).
+## Setup on a new machine
 
 ```bash
-sbatch scripts/phase0/download_phase0_data.sbatch        # maps, metadata, mini split 0, navhard, 123D sample
-sbatch scripts/phase0/build_env_navsim2.sbatch           # envs/navsim2
-python3 scripts/phase0/vendor_drivor.py                  # src/ade2e_wm/agents/drivor
-sbatch scripts/phase0/fetch_navhard_stage1_sensors.sbatch  # stage-one real frames (lists in data/_lists)
-sbatch scripts/phase0/metric_cache_navhard.sbatch
-sbatch scripts/phase0/inspect_drivor.sbatch              # checkpoint keys and tensor shapes
-sbatch scripts/phase0/audit_data.sbatch                  # OpenScene / navtrain / 123D audits
-sbatch scripts/phase0/gpu_latency_drivor.sbatch
-
-# after accepting the data terms: 40-split trainval camera pilot + full test cameras (4 cams kept)
-python3 scripts/phase0/select_trainval_splits.py
-sbatch --export=ALL,KIND=trainval,SPLITS_FILE=$PWD/data/_lists/trainval_pilot_splits.txt scripts/phase0/stream_camera_splits.sbatch
-sbatch --export=ALL,KIND=test,SPLITS_FILE=$PWD/data/_lists/test_all_splits.txt scripts/phase0/stream_camera_splits.sbatch
-sbatch --export=ALL,SPLIT=navtest scripts/phase0/metric_cache.sbatch
-sbatch scripts/phase0/verify_camera_data.sbatch          # coverage + leakage -> docs/phase0/verify_camera_data.json
-
-# DrivoR baseline (official devkit code; run_pdm_balanced.py only schedules one Ray task per log)
-sbatch scripts/phase0/check_balanced_runner.sbatch       # 2-log smoke run must match the plain devkit CSV
-sbatch scripts/phase0/eval_drivor_navhard.sbatch         # LOGS_FILE=configs/subsets/<file> for a log subset
-sbatch scripts/phase0/eval_drivor_navtest.sbatch
+git clone https://github.com/nhat120904/ADE2E-WM.git ade2e-wm && cd ade2e-wm
+mkdir -p third_party && cd third_party
+git clone https://github.com/valeoai/DrivoR && git -C DrivoR checkout fc6e5aa
+git clone https://github.com/autonomousvision/navsim navsim_v2 && git -C navsim_v2 checkout 359c7f7
+cd ..
+# edit scripts/phase0/env.sh (ADE2E_ROOT, data / exp roots), then build the env (scripts/phase0/build_env_navsim2.sbatch)
+mkdir -p data/_lists && cp -r artifacts/cg_lists data/_lists/cg     # scripts read data/_lists/cg/...
+# checkpoints/: released DrivoR (drivor/drivor_Nav2_10epochs.pth), DINOv2 ViT-S/14-reg4, pilot checkpoints (cg_pilot/)
 ```
 
-Data are under the nuScenes/nuPlan Terms of Use (non-commercial); see `data/OPENSCENE_LICENSE.txt`.
+NAVSIM evaluation also needs the OpenScene sensor data, nuPlan maps and the metric caches (`exp/metric_cache/`), which
+are not in git: rebuild them with `scripts/phase0/metric_cache.sbatch` and `scripts/hgo/cg_cache.sbatch`.
+
+## CG pipeline on NAVSIM (docs/CG_SPLIT.md)
+
+All compute through Slurm on compute nodes (old cluster: ≤ 16 CPUs per job, ≤ 2 jobs, nothing on the login node).
+
+```bash
+sbatch scripts/hgo/cg_events.sbatch                     # situation labels of every frame -> data/_lists/cg/events_*.parquet
+python scripts/hgo/cg_split.py                          # sessions, pool, folds, test groups -> data/_lists/cg/split_v1/
+sbatch scripts/hgo/cg_cache.sbatch                      # metric cache / BEV targets of the added frames
+python scripts/hgo/cg_drivor_prep.py                    # cached + balanced manifests, eval subset (inside a job)
+sbatch --export=ALL,VARIANT=withheld scripts/hgo/cg_drivor_train.sbatch   # and VARIANT=exposed (~19 h GPU each)
+sbatch --export=ALL,CKPT=<abs last.ckpt>,NAME=<run> scripts/hgo/cg_drivor_eval.sbatch
+python scripts/hgo/cg_gap.py --fold data/_lists/cg/split_v1/turn_vru --exposed <csvs> --withheld <csvs> --out <json>
+python scripts/hgo/cg_dose.py prep; sbatch ... scripts/hgo/cg_dose_eval.sbatch; python scripts/hgo/cg_dose.py gap ...
+```
+
+Data are under the nuScenes / nuPlan Terms of Use (non-commercial); `artifacts/cg_lists` holds tokens and labels derived
+from the nuPlan annotations.

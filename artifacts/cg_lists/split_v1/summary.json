@@ -1,0 +1,65 @@
+{
+ "name": "split_v1",
+ "args": {
+  "name": "split_v1",
+  "test_frac": 0.2,
+  "seed": 0,
+  "pet": 3.0,
+  "tconf": 6.0,
+  "gap": 2,
+  "none_test": 1500,
+  "folds": [
+   "turn|vru",
+   "left|veh_opp"
+  ],
+  "metric_cache": [
+   "exp/metric_cache/train_hgo"
+  ],
+  "out_md": "docs/cg_split_folds.md"
+ },
+ "sessions_test": 34,
+ "sessions_train": 137,
+ "logs_test": 275,
+ "logs_train": 1035,
+ "pool_windows": 84390,
+ "pool_navtrain": 79111,
+ "pool_conflict_add": 5279,
+ "pool_logs": 988,
+ "navtrain_in_test_sessions": 23283,
+ "test_extra_frames": 5071,
+ "test_extra_logs": 265,
+ "cache_todo_train": 65412,
+ "cache_todo_test": 4189,
+ "folds": [
+  {
+   "fold": "turn|vru",
+   "test_cell_navtest": 32,
+   "test_cell_cgtest": 209,
+   "test_cell_logs": 50,
+   "test_cell_sessions": 28,
+   "purged": 2600,
+   "purge_pct": 3.08,
+   "cell_in_exposed": 755,
+   "support_partner": 432,
+   "support_partner_logs": 85,
+   "support_man": 27126,
+   "train_windows": 81790,
+   "mde80_est": 3.8
+  },
+  {
+   "fold": "left|veh_opp",
+   "test_cell_navtest": 26,
+   "test_cell_cgtest": 71,
+   "test_cell_logs": 26,
+   "test_cell_sessions": 20,
+   "purged": 926,
+   "purge_pct": 1.1,
+   "cell_in_exposed": 311,
+   "support_partner": 225,
+   "support_partner_logs": 44,
+   "support_man": 18918,
+   "train_windows": 83464,
+   "mde80_est": 3.3
+  }
+ ]
+}

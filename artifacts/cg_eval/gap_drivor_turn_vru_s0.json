@@ -1,0 +1,566 @@
+{
+ "fold": "data/_lists/cg/split_v1/turn_vru",
+ "scenes": 2621,
+ "logs": 321,
+ "sessions": 78,
+ "exposed": [
+  "exp/cg_eval/drivor_turn_vru_exposed_812x476_e6_s0/navtest.csv",
+  "exp/cg_eval/drivor_turn_vru_exposed_812x476_e6_s0/cg_test.csv"
+ ],
+ "withheld": [
+  "exp/cg_eval/drivor_turn_vru_withheld_812x476_e6_s0/navtest.csv",
+  "exp/cg_eval/drivor_turn_vru_withheld_812x476_e6_s0/cg_test.csv"
+ ],
+ "coverage_missing": {
+  "exposed": {
+   "cell": 0,
+   "cell_in4": 0,
+   "cell_not_strict4": 0,
+   "same_man": 0,
+   "same_partner": 0,
+   "man_none": 0,
+   "other": 0,
+   "tokens": []
+  },
+  "withheld": {
+   "cell": 0,
+   "cell_in4": 0,
+   "cell_not_strict4": 0,
+   "same_man": 0,
+   "same_partner": 0,
+   "man_none": 0,
+   "other": 0,
+   "tokens": []
+  }
+ },
+ "slice_rule": "cell_in4: man4 in ['left', 'right'] (left/right with inter4), first crossing partner at 4 s = vru (petx4 < 3.0, tconfx4 <= 6.0)",
+ "cell": {
+  "scenes": 241,
+  "logs": 50,
+  "sessions": 28,
+  "exposed_EPDMS": 87.11,
+  "withheld_EPDMS": 86.8,
+  "gap_EPDMS": 0.31,
+  "gap_EPDMS_ci_log": [
+   -1.76,
+   2.56
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -1.7,
+   3.03
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 95.64,
+  "withheld_NC": 96.89,
+  "gap_NC": -1.24,
+  "gap_NC_ci_log": [
+   -3.19,
+   0.48
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   -2.75,
+   0.53
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "cell_in4": {
+  "scenes": 15,
+  "logs": 10,
+  "sessions": 10,
+  "exposed_EPDMS": 88.12,
+  "withheld_EPDMS": 87.98,
+  "gap_EPDMS": 0.15,
+  "gap_EPDMS_ci_log": [
+   -0.58,
+   0.75
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -0.51,
+   0.78
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 93.33,
+  "withheld_NC": 93.33,
+  "gap_NC": 0.0,
+  "gap_NC_ci_log": [
+   0.0,
+   0.0
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   0.0,
+   0.0
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "cell_not_strict4": {
+  "scenes": 226,
+  "logs": 50,
+  "sessions": 28,
+  "exposed_EPDMS": 87.05,
+  "withheld_EPDMS": 86.72,
+  "gap_EPDMS": 0.32,
+  "gap_EPDMS_ci_log": [
+   -1.9,
+   2.74
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -1.81,
+   3.24
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 95.8,
+  "withheld_NC": 97.12,
+  "gap_NC": -1.33,
+  "gap_NC_ci_log": [
+   -3.41,
+   0.5
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   -2.89,
+   0.58
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "same_man": {
+  "scenes": 180,
+  "logs": 38,
+  "sessions": 24,
+  "exposed_EPDMS": 90.52,
+  "withheld_EPDMS": 89.81,
+  "gap_EPDMS": 0.72,
+  "gap_EPDMS_ci_log": [
+   -1.54,
+   3.13
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -1.87,
+   2.58
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 97.22,
+  "withheld_NC": 96.67,
+  "gap_NC": 0.56,
+  "gap_NC_ci_log": [
+   -1.14,
+   2.76
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   -1.37,
+   2.47
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "same_partner": {
+  "scenes": 200,
+  "logs": 50,
+  "sessions": 31,
+  "exposed_EPDMS": 85.18,
+  "withheld_EPDMS": 87.36,
+  "gap_EPDMS": -2.18,
+  "gap_EPDMS_ci_log": [
+   -4.33,
+   -0.52
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -3.77,
+   -0.52
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 94.5,
+  "withheld_NC": 96.0,
+  "gap_NC": -1.5,
+  "gap_NC_ci_log": [
+   -3.68,
+   0.0
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   -3.09,
+   0.0
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "man_none": {
+  "scenes": 1000,
+  "logs": 251,
+  "sessions": 75,
+  "exposed_EPDMS": 85.94,
+  "withheld_EPDMS": 86.37,
+  "gap_EPDMS": -0.43,
+  "gap_EPDMS_ci_log": [
+   -1.33,
+   0.52
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -1.19,
+   0.24
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 98.65,
+  "withheld_NC": 98.9,
+  "gap_NC": -0.25,
+  "gap_NC_ci_log": [
+   -0.93,
+   0.39
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   -0.75,
+   0.31
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "other": {
+  "scenes": 1000,
+  "logs": 216,
+  "sessions": 72,
+  "exposed_EPDMS": 90.07,
+  "withheld_EPDMS": 90.34,
+  "gap_EPDMS": -0.27,
+  "gap_EPDMS_ci_log": [
+   -1.13,
+   0.53
+  ],
+  "gap_EPDMS_valid_draws_log": 2000,
+  "gap_EPDMS_ci_session": [
+   -1.11,
+   0.56
+  ],
+  "gap_EPDMS_valid_draws_session": 2000,
+  "exposed_NC": 98.95,
+  "withheld_NC": 98.75,
+  "gap_NC": 0.2,
+  "gap_NC_ci_log": [
+   -0.32,
+   0.74
+  ],
+  "gap_NC_valid_draws_log": 2000,
+  "gap_NC_ci_session": [
+   -0.29,
+   0.75
+  ],
+  "gap_NC_valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_minus_same_man": {
+  "value": -0.41,
+  "ci_log": [
+   -3.82,
+   3.16
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -3.54,
+   3.79
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_minus_same_man": {
+  "value": -1.8,
+  "ci_log": [
+   -4.51,
+   0.6
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -4.17,
+   0.83
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_minus_same_partner": {
+  "value": 2.49,
+  "ci_log": [
+   -0.42,
+   5.62
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.39,
+   5.8
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_minus_same_partner": {
+  "value": 0.26,
+  "ci_log": [
+   -2.29,
+   2.93
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.82,
+   2.54
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_minus_man_none": {
+  "value": 0.74,
+  "ci_log": [
+   -1.51,
+   3.19
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.47,
+   3.65
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_minus_man_none": {
+  "value": -0.99,
+  "ci_log": [
+   -2.97,
+   0.91
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -2.61,
+   0.86
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_minus_other": {
+  "value": 0.58,
+  "ci_log": [
+   -1.5,
+   2.85
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.35,
+   3.25
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_minus_other": {
+  "value": -1.44,
+  "ci_log": [
+   -3.45,
+   0.38
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -2.98,
+   0.45
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_in4_minus_same_man": {
+  "value": -0.57,
+  "ci_log": [
+   -3.11,
+   1.79
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -2.62,
+   2.09
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_in4_minus_same_man": {
+  "value": -0.56,
+  "ci_log": [
+   -2.76,
+   1.14
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -2.47,
+   1.37
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_in4_minus_same_partner": {
+  "value": 2.32,
+  "ci_log": [
+   0.52,
+   4.59
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   0.6,
+   4.04
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_in4_minus_same_partner": {
+  "value": 1.5,
+  "ci_log": [
+   0.0,
+   3.68
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   0.0,
+   3.09
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_in4_minus_man_none": {
+  "value": 0.57,
+  "ci_log": [
+   -0.6,
+   1.71
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.38,
+   1.57
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_in4_minus_man_none": {
+  "value": 0.25,
+  "ci_log": [
+   -0.39,
+   0.93
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.31,
+   0.75
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_in4_minus_other": {
+  "value": 0.42,
+  "ci_log": [
+   -0.7,
+   1.48
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.61,
+   1.38
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_in4_minus_other": {
+  "value": -0.2,
+  "ci_log": [
+   -0.74,
+   0.32
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.75,
+   0.29
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_not_strict4_minus_same_man": {
+  "value": -0.4,
+  "ci_log": [
+   -3.98,
+   3.32
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -3.62,
+   3.91
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_not_strict4_minus_same_man": {
+  "value": -1.88,
+  "ci_log": [
+   -4.68,
+   0.6
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -4.35,
+   0.78
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_not_strict4_minus_same_partner": {
+  "value": 2.5,
+  "ci_log": [
+   -0.54,
+   5.71
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -0.5,
+   6.02
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_not_strict4_minus_same_partner": {
+  "value": 0.17,
+  "ci_log": [
+   -2.51,
+   2.96
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.98,
+   2.53
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_not_strict4_minus_man_none": {
+  "value": 0.75,
+  "ci_log": [
+   -1.6,
+   3.35
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.6,
+   3.84
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_not_strict4_minus_man_none": {
+  "value": -1.08,
+  "ci_log": [
+   -3.18,
+   0.94
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -2.82,
+   0.9
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_EPDMS_cell_not_strict4_minus_other": {
+  "value": 0.59,
+  "ci_log": [
+   -1.65,
+   3.01
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -1.44,
+   3.53
+  ],
+  "valid_draws_session": 2000
+ },
+ "did_NC_cell_not_strict4_minus_other": {
+  "value": -1.53,
+  "ci_log": [
+   -3.69,
+   0.4
+  ],
+  "valid_draws_log": 2000,
+  "ci_session": [
+   -3.14,
+   0.49
+  ],
+  "valid_draws_session": 2000
+ }
+}
