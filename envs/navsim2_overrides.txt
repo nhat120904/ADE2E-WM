@@ -1,0 +1,8 @@
+# Overrides applied on top of NAVSIM v2.2 requirements.txt for the DrivoR Nav2 evaluation env.
+# torch/torchvision: DrivoR README install (cu121 wheels); NAVSIM pins 2.0.1.
+torch==2.1.0+cu121
+torchvision==0.16.0+cu121
+# numpy: DrivoR issue #47 (zero sub-scores with the released Nav2 checkpoint unless numpy==1.26.4 and navhard is re-cached).
+numpy==1.26.4
+# timm: DrivoR requirements (vit_small_patch14_reg4_dinov2 + timm_ViT subclass).
+timm==1.0.15

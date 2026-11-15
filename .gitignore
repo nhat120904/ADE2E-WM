@@ -1,0 +1,35 @@
+# large or machine-local: data, experiments, environments, weights, logs (see README "Layout")
+/data
+/exp
+/envs/*
+!/envs/navsim2_freeze.txt
+!/envs/navsim2_overrides.txt
+/checkpoints/*
+!/checkpoints/SHA256SUMS
+/logs/
+/output/
+/third_party/
+/ade2e-paper/
+lightning_logs/
+
+# archives, weights
+*.zip
+*.tar
+*.tar.gz
+*.ckpt
+*.pth
+*.pt
+*.npz
+*.pkl
+*.parquet
+
+# python / tooling
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.claude/
+.vscode/
+.idea/
+.DS_Store
